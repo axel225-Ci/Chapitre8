@@ -8,9 +8,11 @@ import org.junit.jupiter.api.Test;
 
 public class BookShelfSpec {
     @Test
-    public void shelfEmptyWhenNoBookAdded() throws Exception {
-        bookstoread.BookShelf shelf = new bookstoread.BookShelf();
+    void bookshelfContainsTwoBooksWhenTwoBooksAdded() {
+        BookShelf shelf = new BookShelf();
+        shelf.add("Effective Java");
+        shelf.add("Code Complete");
         List<String> books = shelf.books();
-        assertTrue(books.isEmpty(), () -> "BookShelf should be empty.");
+        assertEquals(2, books.size(), () -> "BookShelf should have two books.");
     }
 }
