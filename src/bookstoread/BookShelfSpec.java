@@ -1,6 +1,7 @@
 import java.util.List;
 
 import bookstoread.BookShelf;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -13,6 +14,10 @@ class bookShelfSpec {
         bookstoread.BookShelf shelf = new bookstoread.BookShelf();
         List<String> books = shelf.books();
         assertTrue(books.isEmpty(), () -> "BookShelf should be empty.");
+    }
+    @BeforeEach
+    void init() throws Exception {
+        BookShelf shelf = new BookShelf();
     }
 
 }
